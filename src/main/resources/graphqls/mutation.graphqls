@@ -1,0 +1,4 @@
+type Mutation {
+    createLivro(livro: LivroInput!, email: String!): Livro
+    createAutor(autor: AutorInput): Autor
+}

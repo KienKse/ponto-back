@@ -1,0 +1,4 @@
+type Query {
+    findAutor(email: String): Autor
+    findLivro(isbn: String): Livro
+}

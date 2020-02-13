@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.pontoback;'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.graphql-java', name: 'graphql-java-tools', version: '5.2.4'
+//    compile group: 'com.coxautodev', name: 'graphql-java-tools', version: '2.0.0'
+//	implementation 'com.graphql-java:graphql-java-tools:5.2.4'
+    implementation "com.graphql-java:graphql-spring-boot-starter:3.0.0"
+//    implementation "com.graphql-java:graphql-spring-boot-starter:$graphqlVersion"
+    implementation "com.graphql-java:graphiql-spring-boot-starter:3.0.0"
+//    implementation "com.graphql-java:graphiql-spring-boot-starter:$graphqlVersion"
+	compile group: 'com.h2database', name: 'h2', version: '1.4.199'
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	runtimeOnly('org.springframework.boot:spring-boot-devtools')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
